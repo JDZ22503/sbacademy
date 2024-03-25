@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+#nav {
+    background-color: rgb(116, 251, 206);
+    height: 20px;
+    padding: 10px;
+}
+a {
+    padding-right: 20px;
+    text-decoration: none;
+    color: brown;
+}
+body,html {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(157, 253, 221);
+   
+}
+.container { 
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-image: url(designer.png);
+    height: 100vh;
+    background-size: cover; /* Corrected property */
+    background-repeat: no-repeat;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    width: 200%; /* Set the width of the form */
+}
+
+.boder {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgb(175, 6, 6);
+    padding: 20px;
+    color: rgb(175, 6, 6);
+}
+
+hr {
+    margin: 10px;
+}
+.login {
+    color: rgb(175, 6, 6);
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+}
+.padding {
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        background-image: url(designer4.png);
+    }
+    .boder {
+        width: 50%;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        background-image: url(designer3.png);
+    }
+    .boder {
+        width: 70%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        background-image: url(designer2.png);
+    }
+    .boder {
+        width: 70%;
+    }
+}
