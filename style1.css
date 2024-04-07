@@ -2,46 +2,102 @@
     margin: 0;
     padding: 0;
 }
+
 #nav {
-    background-color: rgb(116, 251, 206);
-    height: 20px;
-    padding: 10px;
-}
-a {
-    padding-right: 20px;
-    text-decoration: none;
-    color: brown;
-}
-body,html {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(157, 253, 221);
+    background-color:#0F1035;
    
+    padding-left: 10px;
+    height: 6%;
+    padding-right: 20px;
 }
-.container { 
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    /* margin-right: 20px; */
+}
+#nav {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    background-image: url(designer.png);
-    height: 100vh;
-    background-size: cover; /* Corrected property */
-    background-repeat: no-repeat;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
+
+#logout-btn {
+    background-color:#7FC7D9;
+    height:25px;
+    width: 7%;
+    border-radius: 10px;
+    border: none;
+    color: #0F1035;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+.nev {
+    text-align: center;
+}
+
+ img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.nev a {
+    display: block;
+    padding: 10px 0;
+    color: #DCF2F1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.welcome h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    background-color: #DCF2F1;
+   font-size: large;
+color: #0F1035;
+
+
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
+
+    width: 100%;
+    background-image: url(p1.png);
+
+    background-size: cover;
+    /* Corrected property */
+    background-repeat: no-repeat;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form {
-    width: 200%; /* Set the width of the form */
+    width: 50%;
+    /* Set the width of the form */
 }
 
 .boder {
-    width: 100%;
+    width: 50%;
     border-radius: 10px;
     border: 1px solid rgb(175, 6, 6);
     padding: 20px;
@@ -51,6 +107,7 @@ body,html {
 hr {
     margin: 10px;
 }
+
 .login {
     color: rgb(175, 6, 6);
     display: flex;
@@ -58,34 +115,365 @@ hr {
     flex-direction: column;
     width: 100%;
 }
+
 .padding {
     padding: 10px 0;
     margin: 10px 0;
 }
 
+
+
+/*-----------------home page css--------------------*/
+.mainpart {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 6%);
+   
+}
+.welcome{
+    background-image: url(p1.png);
+    background-size: cover;
+}
+
+.nev {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+width: 25%;
+    text-align: center;
+    align-items: center;
+
+    background-color: #365486;
+}
+
+img {
+    margin-top: 50px;
+}
+
+a {
+    padding: 10px 30px;
+}
+
+#canv1 {
+    height: 120px;
+    width: 120px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+img {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 50%;
+    /* This will make the image round */
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: x-large;
+    width: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/*--------------info page css---------------*/
+.center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url(p1.png);
+    background-size: cover;
+
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    align-items: center;
+  
+}
+.detail {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-image: url(p1.png);
+    background-size: cover;
+
+
+}
+.detailForm {
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.detailForm input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    align-items: center;
+
+}
+
+/*-----------------tutionWork-----------------*/
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: auto;
+   
+ /* Add overflow property for scrollbar */
+   
+}
+
+.hwdetails {
+    width: 100%;
+    
+}
+
+.hwForm {
+    width: 100%;
+   
+}
+
+table {
+    width: 100%;
+   
+}
+
+table, th, td {
+font-size: 25px;
+    padding: 8px;
+    text-align: left;
+}
+/*-------------analysis--------------*/
+
+.analysis{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: inherit;
+}
+#mychat {
+        width: 100%;
+        height: 60vh;
+    border-style: none;
+    
+    
+}
+.centeranalysis{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  
+}
+element.style {
+    display: block;
+    box-sizing: border-box;
+    height: 506px;
+    width: 506px;
+}
+.centeranalysis{
+    background-image: url(p1.png);
+    background-size: cover;
+}
+/*-------------about.php------------*/
+.about{
+    padding: 50px;
+    font-size: 30px;
+    
+}
+
 @media (max-width: 1200px) {
-    .container {
-        background-image: url(designer4.png);
+    .center {
+        
+        background-image: url(p2.png);
+        background-size: cover;
+    
     }
+
     .boder {
         width: 50%;
     }
+    details {
+
+        width: 80%;
+    }
+    table{
+        font-size: 18px;
+    }
+    img {
+        height: 150px;
+        width: 150px;
+    }
+    .nev{
+        width: 30%;
+    }
+    #logout-btn{
+        width: 10%;
+    }.welcome{
+        background-image: url(p2.png);
+        background-size: cover;
+    }
+   
 }
 
 @media (max-width: 800px) {
-    .container {
-        background-image: url(designer3.png);
+    .center {
+        
+        background-image: url(p2.png);
+        background-size: cover;
+    
     }
+
     .boder {
         width: 70%;
+    }
+    .details {
+
+        width: 80%;
+    }
+    .detailForm {
+        font-size: 20px;
+    }
+    img {
+        height: 120px;
+        width: 120px;
+    }
+    .nev{
+        width: 30%;
+    }
+    table, th, td {
+        font-size: 18px;
+           
+        }
+    #logout-btn{
+        width: 12%;
+    }
+    .welcome,.container{
+        background-image: url(p2.png);
+        background-size: cover;
+    }
+    .about{
+        font-size: 19px;
     }
 }
 
 @media (max-width: 600px) {
-    .container {
-        background-image: url(designer2.png);
+    .center {
+        
+        background-image: url(p2.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+       
+    
     }
+
     .boder {
         width: 70%;
+    }
+
+    a {
+        padding: 20px 10px;
+        text-decoration: none;
+        color: brown;
+        font-size: 10px;
+    }
+
+    img {
+        height: 85px;
+        width: 85px;
+    }
+
+    .details {
+        width: 80%;
+    }
+    .detailForm {
+        font-size: 15px;
+       
+    }.nev{
+        width: 27%;
+    }.welcome h1 {
+        font-size: 1.5em;
+        color: #333;
+    }
+    table, th, td {
+        font-size: 15px;
+            padding: 8px;
+            text-align: left;
+        }
+    /*analysis*/
+    .analysis{
+        
+        width: 100%;
+       
+    }
+    #mychat {
+            width: 90%;
+            height: 100%;
+        border-style: none;
+    
+    }
+    .centeranalysis{
+        width: 90%;
+        justify-content: space-between;
+        padding: 0px;
+    }
+    element.style {
+       
+        height: 304px;
+        width: 288px;
+    }
+    #myChart{
+        width: 100%;
+    }
+    .chart-container {
+        transform: rotate(90deg);
+        transform-origin: 35%;
+        width: 200vh; /* Adjust the width and height as needed */
+      
+        overflow: hidden;
+    }
+    #logout-btn{
+        width: 15%;
+    }
+    button img{width: 100px;
+        height: 100px;
+    }.welcome,.container{
+        background-image: url(p2.png);
+        background-size: cover;
+    }.about{
+        font-size: 15px;
+    }.container h1{
+        font-size: 23px;
+        padding: 5px 10px ;
+    }
+    
+    .container h2{
+        font-size: 20px;
+        padding: 5px 10px ;
+    }
+    .container h3{
+        font-size: 18px;
+        padding: 5px 10px ;
     }
 }

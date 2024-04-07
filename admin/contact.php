@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
-    <link rel="stylesheet" href="style1.css">
-  
+    <link rel="stylesheet" href="style.css">
 </head>
 <?php
 require "conn.php";
@@ -27,13 +26,10 @@ if (isset($_GET['name'])) {
 <body>
 
     <div id="nav">
-        <div>
-            <a href="home.php?name=<?php echo $name?>">HOME</a>
-            <a href="about.php?name=<?php echo $name?>">ABOUT</a>
-            <a href="contact.php?name=<?php echo $name?>">CONTACT</a>
-            <a href="photos.php?name=<?php echo $name?>">PHOTOS</a>
-        </div>
-        <button id="logout-btn" onclick="logout()">LOGOUT</button>
+        <a href="home.php?name=<?php echo $name?>">HOME</a>
+        <a href="about.php?name=<?php echo $name?>">ABOUT</a>
+        <a href="contact.php?name=<?php echo $name?>">CONTACT</a>
+        <a href="photos.php?name=<?php echo $name?>">PHOTOS</a>
     </div>
     <div class="mainpart">
         <div class="nev">
@@ -46,17 +42,10 @@ if (isset($_GET['name'])) {
             <a href="tutionWork.php?name=<?php echo $name ?>">Tution Work</a>
         </div>
         <div class="welcome">
-            <h1>Welcome to Shree Bahuchar Academy.</h1>
+            <h1>Mobile No:7016180335.</h1>
+
         </div>
     </div>
-
-    <script>
-        function logout() {
-            if (confirm("Are you sure you want to logout?")) {
-                window.location.href = "index.php";
-            }
-        }
-    </script>
 </body>
 
 </html>

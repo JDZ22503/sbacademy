@@ -1,3 +1,50 @@
+<?php
+require_once "conn.php";
+
+if (isset($_POST["submit"])) {
+    // Table name
+    $name = $_POST["f_Name"];
+
+    // SQL to create table if it doesn't exist
+    $sqlCreateTable = "CREATE TABLE IF NOT EXISTS $name (
+        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255),
+        hw TEXT,
+        sub varchar(255),
+        photo VARCHAR(255),
+        date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, Tables VARCHAR(255), Addition VARCHAR(255), Substraction VARCHAR(255), multiplication VARCHAR(255), Division VARCHAR(255), english VARCHAR(255)
+    )";
+
+    if (mysqli_query($conn, $sqlCreateTable)) {
+        echo "Table created successfully or already exists.<br>";
+    } else {
+        echo "Error creating table: " . mysqli_error($conn);
+    }
+
+    // Check if username and password match admin credentials
+    $email = $_POST["email"];
+    $pass = $_POST["pass"];
+    if ($email === "admin@gmail.com" && $pass === "sbacademy2024") {
+        header("Location: admin/admin.php");
+        exit; // Ensure script stops execution after redirection
+    }
+
+    // Check against regular student credentials
+    $query = "SELECT * FROM student WHERE email='$email' AND password='$pass'";
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $name = $row["f_name"];
+            header("Location: home.php?name=$name");
+            exit; // Ensure script stops execution after redirection
+        }
+    } else {
+        header("Location: error.php");
+        exit; // Ensure script stops execution after redirection
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,29 +54,16 @@
     <title>SHREE BAHUCHAR ACEDEMY</title>
     <link rel="stylesheet" href="style1.css">
 </head>
-<?php
-require_once "conn.php";
-extract($_POST);
-if (isset($_POST["submit"])) {
-    $username = $_POST["namee"];
-    $pass = $_POST["pass"];
-    $query = "select * from student where name='$name' and password='$pass'";
-    $result = mysqli_query($conn, $query);
-    if (mysqli_num_rows($result) > 0) {
-        header("location:home.php");
-    } else {
-        header("location:error.php");
-    }
-}
-?>
 
 <body>
-    <div id="nav">
-        <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">CONTECT</a>
-        <a href="#">PHOTOS</a>
-
+<div id="nav">
+        <div>
+            
+            <a href="about.php">ABOUT</a>
+            <a href="contact.php">CONTACT</a>
+            <a href="photo.php">PHOTOS</a>
+        </div>
+       
     </div>
     <div class="container">
         <div class="boder">
@@ -38,14 +72,18 @@ if (isset($_POST["submit"])) {
                     <h2>Sign-up</h2>
                     <hr>
                     <label for="">
-                        <h3>Name:</h3>
+                        <h3>First Name:</h3>
                     </label>
-                    <input class="padding" type="text" name="Name">
+                    <input class="padding" type="text" name="f_Name">
+                    <label for="">
+                        <h3>Email id:</h3>
+                    </label>
+                    <input class="padding" type="text" name="email">
                     
                     <label for="">
-                        <h3>Passwoed:</h3>
+                        <h3>Password:</h3>
                     </label>
-                    <input class="padding" type="passwoed" name="pass">
+                    <input class="padding" type="password" name="pass">
                     <input class="padding" type="submit" name="submit">
                     <hr>
                     <h3>Create new Account</h3>
@@ -54,7 +92,13 @@ if (isset($_POST["submit"])) {
             </form>
         </div>
     </div>
-   
+    <script>
+        function logout() {
+            if (confirm("Are you sure you want to logout?")) {
+                window.location.href = "index.php";
+            }
+        }
+    </script>
 </body>
 
 </html>
